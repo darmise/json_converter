@@ -1,0 +1,53 @@
+[
+  {
+    "id": 1,
+    "name": "Marco",
+    "address": {
+      "street": "Via Roma",
+      "city": "Roma"
+    },
+    "orders": [
+      {
+        "date": "2024-01-01",
+        "items": [
+          {"product": "Libro", "qty": 1},
+          {"product": "Penna", "qty": 2}
+        ]
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Luca",
+    "address": {
+      "street": "Corso Milano",
+      "city": "Milano"
+    },
+    "orders": [
+      {
+        "date": "2024-01-05",
+        "items": [
+          {"product": "Quaderno", "qty": 3},
+          {"product": "Matita", "qty": 5}
+        ]
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Giulia",
+    "address": {
+      "street": "Via Garibaldi",
+      "city": "Torino"
+    },
+    "orders": [
+      {
+        "date": "2024-02-10",
+        "items": [
+          {"product": "Agenda", "qty": 1},
+          {"product": "Evidenziatore", "qty": 4}
+        ]
+      }
+    ]
+  }
+]

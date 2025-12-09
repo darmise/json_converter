@@ -1,0 +1,21 @@
+{
+  "id": "1",
+  "name": "Marco",
+  "address": {
+    "street": "Via Roma",
+    "city": "Roma"
+  },
+  "orders": {
+    "date": "2024-01-01",
+    "items": [
+      {
+        "product": "Libro",
+        "qty": "1"
+      },
+      {
+        "product": "Penna",
+        "qty": "2"
+      }
+    ]
+  }
+}
