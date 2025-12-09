@@ -5,11 +5,11 @@ Tool Python per convertire JSON annidati in tabelle CSV “relazionali” e rico
 
 **Funzionalità principali**
 
-- Conversione JSON → tabelle CSV 
+- Conversione JSON → tabelle CSV; 
 
-- Conversione CSV → JSON, con ricostruzione della struttura originaria (relazioni padre-figli).
+- Conversione CSV → JSON, con ricostruzione della struttura originaria (relazioni padre-figli);
 
-- Supporto a JSON singolo o lista di oggetti JSON
+- Supporto a JSON singolo o lista di oggetti JSON.
 
 
 **Esempio di utilizzo: JSON → CSV**
