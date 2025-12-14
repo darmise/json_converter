@@ -14,25 +14,25 @@ Tool Python per convertire JSON annidati in tabelle CSV “relazionali” e rico
 
 **Esempio di utilizzo: JSON → CSV**
 ```python
-from src.utils import Utils
-from src.json_to_tables import JSON_to_tables
+from src.converter_JSON import Converter_JSON
+from src.utils import Utils 
 
-data = Utils().read_json(input_filename)
-json_tables = JSON_to_tables(output_folder)
+data = Utils().read_json(input_name)
+json_tables = Converter_JSON(output_folder)
 json_tables.processing(data, "root")
 print(f"[✓] Output salvato in: {output_folder}")
 ```
-Nella cartella output_folder/ vengono salvati i diversi .csv che rappresentano le tabelle generate dal JSON annidato.
-Nella cartella tests vengono proposti gli esempi:Test1 e Test2.
+Nella cartella output_folder/ vengono salvati i .csv che rappresentano le tabelle generate dal JSON annidato.
+Nella cartella tests vengono proposti gli esempi:Test1, Test2 e Test3.
 
 **Esempio di utilizzo: CSV → JSON**
 ```python
 from src.utils import Utils
-from src.tables_to_json import Tables_to_JSON
+from src.converter_CSV import Converter_CSV
 
-convert = Tables_to_JSON()
+convert = Converter_CSV()
 result_json = convert.processing(input_folder)
-Utils().save_json(result_json, output_filename)
-print(f"[✓] Output salvato in: {output_filename}")
+Utils().save_json(result_json, output)
+print(f"[✓] Output salvato in: {output}")
 ```
-Nella cartella tests vengono proposti gli esempi: Test3 e Test4.
+Nella cartella tests vengono proposti gli esempi: Test4, Test5 e Test6.
