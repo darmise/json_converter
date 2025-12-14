@@ -1,0 +1,5 @@
+pk_id,id_fk,product,qty
+7234f4bd-453d-4e78-9ee5-aba958c0baae,5dc8d226-719f-43a4-a594-7b9ce81bd00a,Libro,1
+58c12cc0-3c22-4cd0-a0df-9821d04e75dc,5dc8d226-719f-43a4-a594-7b9ce81bd00a,Penna,2
+847c211a-d803-46d6-a135-bfbc5363e767,ae23fc8c-20a8-4305-b6f4-9281eef6001a,Libro,1
+ab036a54-cf6c-4488-9dbd-535b33b4ced7,ae23fc8c-20a8-4305-b6f4-9281eef6001a,Penna,2
