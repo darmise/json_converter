@@ -1,0 +1,27 @@
+{
+  "fields": {
+    "id": {
+      "type": "integer"
+    },
+    "name": {
+      "type": "string"
+    },
+    "test": {
+      "type": "array",
+      "child_table": "root_test"
+    },
+    "address": {
+      "type": "object",
+      "child_table": "root_address"
+    },
+    "orders": {
+      "type": "array",
+      "child_table": "root_orders"
+    }
+  },
+  "children": [
+    "root_test",
+    "root_address",
+    "root_orders"
+  ]
+}

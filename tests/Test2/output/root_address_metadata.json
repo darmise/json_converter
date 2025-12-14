@@ -1,0 +1,11 @@
+{
+  "fields": {
+    "street": {
+      "type": "string"
+    },
+    "city": {
+      "type": "string"
+    }
+  },
+  "children": []
+}

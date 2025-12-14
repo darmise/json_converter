@@ -1,0 +1,3 @@
+pk_id,id_fk,name,status
+8b176aae-4f84-41e4-bf31-083567ffb9d3,51036bca-ad61-49c3-996a-cdd03c1de551,auth,running
+61ba1ffa-34ef-4327-926f-55cdb12fa715,51036bca-ad61-49c3-996a-cdd03c1de551,data-processor,degraded

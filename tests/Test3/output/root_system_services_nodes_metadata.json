@@ -1,0 +1,21 @@
+{
+  "fields": {
+    "id": {
+      "type": "string"
+    },
+    "region": {
+      "type": "string"
+    },
+    "load": {
+      "type": "number"
+    },
+    "queue": {
+      "type": "object",
+      "child_table": "root_system_services_nodes_queue"
+    }
+  },
+  "children": [
+    "root_system_services_nodes_queue",
+    "root_system_services_nodes_queue"
+  ]
+}
