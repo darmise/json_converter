@@ -23,7 +23,7 @@ json_tables.processing(data, "root")
 print(f"[✓] Output salvato in: {output_folder}")
 ```
 Nella cartella output_folder/ vengono salvati i .csv che rappresentano le tabelle generate dal JSON annidato.
-Nella cartella tests vengono proposti gli esempi:Test1, Test2 e Test3.
+Nella cartella tests vengono proposti gli esempi: Test1, Test2 e Test3.
 
 **Esempio di utilizzo: CSV → JSON**
 ```python
