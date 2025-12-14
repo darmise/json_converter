@@ -1,7 +1,0 @@
-pk_id,id_fk,product,qty
-d82a2c46-7dd1-49b8-9075-5163a36d0076,ecbcbf5d-aa45-4984-879d-d1b94e22878c,Libro,1
-83b76a19-c5d8-4328-b946-7a0498666c00,ecbcbf5d-aa45-4984-879d-d1b94e22878c,Penna,2
-3cd69f17-140f-41b5-a2a1-6ad9dc84d694,527f4e9a-3c0f-4dba-b2bf-5ec3a06aade6,Quaderno,3
-7efbd03e-2af4-454a-bd87-d9b4c0cbd2db,527f4e9a-3c0f-4dba-b2bf-5ec3a06aade6,Matita,5
-3a0ef7c8-be46-45bb-92b8-05fe48de6d0e,5346a659-188a-4f4e-8e41-1a1bf0f58110,Agenda,1
-73bda583-08fc-4850-b936-2b22a8719dbf,5346a659-188a-4f4e-8e41-1a1bf0f58110,Evidenziatore,4
