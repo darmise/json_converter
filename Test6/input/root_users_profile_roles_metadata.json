@@ -1,8 +1,0 @@
-{
-  "fields": {
-    "roles": {
-      "type": "string"
-    }
-  },
-  "children": []
-}
