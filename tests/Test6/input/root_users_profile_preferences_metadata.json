@@ -1,0 +1,17 @@
+{
+  "fields": {
+    "language": {
+      "type": "string"
+    },
+    "timezone": {
+      "type": "string"
+    },
+    "notifications": {
+      "type": "object",
+      "child_table": "root_users_profile_preferences_notifications"
+    }
+  },
+  "children": [
+    "root_users_profile_preferences_notifications"
+  ]
+}

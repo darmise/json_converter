@@ -1,0 +1,14 @@
+{
+  "fields": {
+    "duration_ms": {
+      "type": "integer"
+    },
+    "payload_size": {
+      "type": "integer"
+    },
+    "attempt": {
+      "type": "integer"
+    }
+  },
+  "children": []
+}

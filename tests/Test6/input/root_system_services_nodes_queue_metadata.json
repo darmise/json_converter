@@ -1,0 +1,11 @@
+{
+  "fields": {
+    "pending_tasks": {
+      "type": "integer"
+    },
+    "failed_last_hour": {
+      "type": "integer"
+    }
+  },
+  "children": []
+}

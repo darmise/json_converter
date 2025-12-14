@@ -1,0 +1,14 @@
+{
+  "fields": {
+    "date": {
+      "type": "string"
+    },
+    "items": {
+      "type": "array",
+      "child_table": "root_orders_items"
+    }
+  },
+  "children": [
+    "root_orders_items"
+  ]
+}
