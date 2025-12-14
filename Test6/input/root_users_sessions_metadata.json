@@ -1,0 +1,20 @@
+{
+  "fields": {
+    "session_id": {
+      "type": "string"
+    },
+    "ip": {
+      "type": "string"
+    },
+    "device": {
+      "type": "object",
+      "child_table": "root_users_sessions_device"
+    },
+    "last_activity": {
+      "type": "string"
+    }
+  },
+  "children": [
+    "root_users_sessions_device"
+  ]
+}

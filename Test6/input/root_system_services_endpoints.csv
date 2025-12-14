@@ -1,0 +1,2 @@
+pk_id,id_fk,login,refresh
+b110c108-f5d7-48bb-882c-2c727fe28726,8b176aae-4f84-41e4-bf31-083567ffb9d3,/api/v1/auth/login,/api/v1/auth/refresh
