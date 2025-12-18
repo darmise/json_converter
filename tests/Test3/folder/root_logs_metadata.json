@@ -1,0 +1,11 @@
+{
+  "fields": {
+    "last_errors": {
+      "type": "array",
+      "child_table": "root_logs_last_errors"
+    }
+  },
+  "children": [
+    "root_logs_last_errors"
+  ]
+}

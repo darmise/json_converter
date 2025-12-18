@@ -1,0 +1,252 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://www.unibas.it/test1",
+  "type": "object",
+
+  "properties": {
+    "system": { "$ref": "#/$defs/obj_system" },
+    "users": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/obj_users" }
+    },
+    "logs": { "$ref": "#/$defs/obj_logs" }
+  },
+
+  "required": ["system", "users", "logs"],
+  "additionalProperties": false,
+
+  "$defs": {
+    "str": {
+      "type": "string",
+      "minLength": 2,
+      "maxLength": 60
+    },
+
+    "obj_system": {
+      "type": "object",
+      "properties": {
+        "version": { "$ref": "#/$defs/str" },
+        "environment": { "$ref": "#/$defs/str" },
+        "services": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/obj_service" }
+        }
+      },
+      "required": ["version", "environment", "services"],
+      "additionalProperties": false
+    },
+
+    "obj_service": {
+      "type": "object",
+      "properties": {
+        "name": { "$ref": "#/$defs/str" },
+        "status": { "$ref": "#/$defs/str" },
+        "endpoints": { "$ref": "#/$defs/obj_endpoints" },
+        "metrics": { "$ref": "#/$defs/obj_metrics" },
+        "config": { "$ref": "#/$defs/obj_config" },
+        "nodes": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/obj_nodes" }
+        }
+      },
+      "required": ["name", "status"],
+      "additionalProperties": true
+    },
+
+    "obj_endpoints": {
+      "type": "object",
+      "properties": {
+        "login": { "$ref": "#/$defs/str" },
+        "refresh": { "$ref": "#/$defs/str" }
+      },
+      "required": ["login", "refresh"],
+      "additionalProperties": false
+    },
+
+    "obj_metrics": {
+      "type": "object",
+      "properties": {
+        "uptime_seconds": { "type": "integer" },
+        "requests": { "$ref": "#/$defs/obj_requests" }
+      },
+      "required": ["uptime_seconds", "requests"],
+      "additionalProperties": false
+    },
+
+    "obj_requests": {
+      "type": "object",
+      "properties": {
+        "total": { "type": "integer" },
+        "success": { "type": "integer" },
+        "errors": { "type": "integer" },
+        "last_24h": { "$ref": "#/$defs/obj_last_24h" }
+      },
+      "required": ["total", "success", "errors", "last_24h"],
+      "additionalProperties": false
+    },
+
+    "obj_last_24h": {
+      "type": "object",
+      "properties": {
+        "success": { "type": "integer" },
+        "errors": { "type": "integer" }
+      },
+      "required": ["success", "errors"],
+      "additionalProperties": false
+    },
+
+    "obj_config": {
+      "type": "object",
+      "properties": {
+        "threads": { "type": "integer" },
+        "batch_size": { "type": "integer" },
+        "retry_policy": { "$ref": "#/$defs/obj_retry_policy" }
+      },
+      "required": ["threads", "batch_size", "retry_policy"],
+      "additionalProperties": false
+    },
+
+    "obj_retry_policy": {
+      "type": "object",
+      "properties": {
+        "max_retries": { "type": "integer" },
+        "backoff": { "$ref": "#/$defs/str" },
+        "initial_delay_ms": { "type": "integer" }
+      },
+      "required": ["max_retries", "backoff", "initial_delay_ms"],
+      "additionalProperties": false
+    },
+
+    "obj_nodes": {
+      "type": "object",
+      "properties": {
+        "id": { "$ref": "#/$defs/str" },
+        "region": { "$ref": "#/$defs/str" },
+        "load": { "type": "number" },
+        "queue": { "$ref": "#/$defs/obj_queue" }
+      },
+      "required": ["id", "region", "load", "queue"],
+      "additionalProperties": false
+    },
+
+    "obj_queue": {
+      "type": "object",
+      "properties": {
+        "pending_tasks": { "type": "integer" },
+        "failed_last_hour": { "type": "integer" }
+      },
+      "required": ["pending_tasks", "failed_last_hour"],
+      "additionalProperties": false
+    },
+
+    "obj_users": {
+      "type": "object",
+      "properties": {
+        "id": { "type": "integer" },
+        "profile": { "$ref": "#/$defs/obj_profile" },
+        "sessions": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/obj_sessions" }
+        }
+      },
+      "required": ["id", "profile", "sessions"],
+      "additionalProperties": false
+    },
+
+    "obj_profile": {
+      "type": "object",
+      "properties": {
+        "name": { "$ref": "#/$defs/str" },
+        "surname": { "$ref": "#/$defs/str" },
+        "roles": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/str" }
+        },
+        "preferences": { "$ref": "#/$defs/obj_preferences" }
+      },
+      "required": ["name", "surname", "roles", "preferences"],
+      "additionalProperties": false
+    },
+
+    "obj_preferences": {
+      "type": "object",
+      "properties": {
+        "language": { "$ref": "#/$defs/str" },
+        "timezone": { "$ref": "#/$defs/str" },
+        "notifications": { "$ref": "#/$defs/obj_notifications" }
+      },
+      "required": ["language", "timezone", "notifications"],
+      "additionalProperties": false
+    },
+
+    "obj_notifications": {
+      "type": "object",
+      "properties": {
+        "email": { "type": "boolean" },
+        "sms": { "type": "boolean" },
+        "push": { "type": "boolean" }
+      },
+      "required": ["email", "sms", "push"],
+      "additionalProperties": false
+    },
+
+    "obj_sessions": {
+      "type": "object",
+      "properties": {
+        "session_id": { "$ref": "#/$defs/str" },
+        "ip": { "$ref": "#/$defs/str" },
+        "device": { "$ref": "#/$defs/obj_device" },
+        "last_activity": { "$ref": "#/$defs/str" }
+      },
+      "required": ["session_id", "ip", "device", "last_activity"],
+      "additionalProperties": false
+    },
+
+    "obj_device": {
+      "type": "object",
+      "properties": {
+        "type": { "$ref": "#/$defs/str" },
+        "os": { "$ref": "#/$defs/str" },
+        "browser": { "$ref": "#/$defs/str" }
+      },
+      "required": ["type", "os", "browser"],
+      "additionalProperties": false
+    },
+
+    "obj_logs": {
+      "type": "object",
+      "properties": {
+        "last_errors": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/obj_last_errors" }
+        }
+      },
+      "required": ["last_errors"],
+      "additionalProperties": false
+    },
+
+    "obj_last_errors": {
+      "type": "object",
+      "properties": {
+        "timestamp": { "$ref": "#/$defs/str" },
+        "service": { "$ref": "#/$defs/str" },
+        "node": { "$ref": "#/$defs/str" },
+        "error_code": { "$ref": "#/$defs/str" },
+        "details": { "$ref": "#/$defs/obj_details" }
+      },
+      "required": ["timestamp", "service", "node", "error_code", "details"],
+      "additionalProperties": false
+    },
+
+    "obj_details": {
+      "type": "object",
+      "properties": {
+        "duration_ms": { "type": "integer" },
+        "payload_size": { "type": "integer" },
+        "attempt": { "type": "integer" }
+      },
+      "required": ["duration_ms", "payload_size", "attempt"],
+      "additionalProperties": false
+    }
+  }
+}

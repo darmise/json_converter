@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://www.unibas.it/test1",
+  "type": "object",
+
+  "properties": {
+    "id": { "type": "integer" },
+    "name": { "$ref": "#str" },
+    "address": { "$ref": "#obj_address" },
+    "orders": {
+      "type": "array",
+      "items": { "$ref": "#obj_order" }
+    }
+  },
+
+  "required": ["id", "name", "address", "orders"],
+  "additionalProperties": false,
+
+  "$defs": {
+
+    "stringa": {
+      "$anchor": "str",
+      "type": "string",
+      "minLength": 2,
+      "maxLength": 60
+    },
+
+    "obj_address": {
+      "$anchor": "obj_address",
+      "type": "object",
+      "properties": {
+        "street": { "$ref": "#str" },
+        "city": { "$ref": "#str" }
+      },
+      "required": ["street", "city"],
+      "additionalProperties": false
+    },
+
+    "obj_order": {
+      "$anchor": "obj_order",
+      "type": "object",
+      "properties": {
+        "date": {
+          "type": "string",
+          "format": "date",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "items": {
+          "type": "array",
+          "items": { "$ref": "#obj_item" }
+        }
+      },
+      "required": ["date", "items"],
+      "additionalProperties": false
+    },
+
+    "obj_item": {
+      "$anchor": "obj_item",
+      "type": "object",
+      "properties": {
+        "product": { "$ref": "#str" },
+        "qty": { "type": "integer" }
+      },
+      "required": ["product", "qty"],
+      "additionalProperties": false
+    }
+  }
+}

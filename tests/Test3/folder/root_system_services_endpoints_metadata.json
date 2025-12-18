@@ -1,0 +1,11 @@
+{
+  "fields": {
+    "login": {
+      "type": "string"
+    },
+    "refresh": {
+      "type": "string"
+    }
+  },
+  "children": []
+}

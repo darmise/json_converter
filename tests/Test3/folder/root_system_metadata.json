@@ -1,0 +1,17 @@
+{
+  "fields": {
+    "version": {
+      "type": "string"
+    },
+    "environment": {
+      "type": "string"
+    },
+    "services": {
+      "type": "array",
+      "child_table": "root_system_services"
+    }
+  },
+  "children": [
+    "root_system_services"
+  ]
+}

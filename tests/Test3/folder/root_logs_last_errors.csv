@@ -1,0 +1,2 @@
+pk_id,id_fk,timestamp,service,node,error_code
+e70900b1-e173-4dc7-9347-e033f035faea,38af0d28-579e-48e5-9968-3c5cfb3c435c,2025-12-11T17:02:55Z,data-processor,node-2,DP_TIMEOUT

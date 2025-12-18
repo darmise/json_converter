@@ -1,0 +1,22 @@
+{
+  "fields": {
+    "name": {
+      "type": "string"
+    },
+    "surname": {
+      "type": "string"
+    },
+    "roles": {
+      "type": "array",
+      "child_table": "root_users_profile_roles"
+    },
+    "preferences": {
+      "type": "object",
+      "child_table": "root_users_profile_preferences"
+    }
+  },
+  "children": [
+    "root_users_profile_roles",
+    "root_users_profile_preferences"
+  ]
+}

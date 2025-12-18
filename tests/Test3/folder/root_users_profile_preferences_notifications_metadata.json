@@ -1,0 +1,14 @@
+{
+  "fields": {
+    "email": {
+      "type": "boolean"
+    },
+    "sms": {
+      "type": "boolean"
+    },
+    "push": {
+      "type": "boolean"
+    }
+  },
+  "children": []
+}

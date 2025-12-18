@@ -1,0 +1,14 @@
+{
+  "fields": {
+    "type": {
+      "type": "string"
+    },
+    "os": {
+      "type": "string"
+    },
+    "browser": {
+      "type": "string"
+    }
+  },
+  "children": []
+}

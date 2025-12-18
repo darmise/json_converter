@@ -1,0 +1,14 @@
+{
+  "fields": {
+    "max_retries": {
+      "type": "integer"
+    },
+    "backoff": {
+      "type": "string"
+    },
+    "initial_delay_ms": {
+      "type": "integer"
+    }
+  },
+  "children": []
+}

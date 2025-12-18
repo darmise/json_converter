@@ -1,0 +1,2 @@
+pk_id,id_fk,max_retries,backoff,initial_delay_ms
+acff2987-7f84-4690-a65b-2870d0a407e3,e7750bd8-0020-48e5-815c-6a58f37b6c35,5,exponential,200

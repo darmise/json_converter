@@ -9,30 +9,30 @@ Tool Python per convertire JSON annidati in tabelle CSV “relazionali” e rico
 
 - Conversione CSV → JSON, con ricostruzione della struttura originaria (relazioni padre-figli);
 
-- Supporto a JSON singolo o lista di oggetti JSON.
+- Supporto a JSON singolo o lista di oggetti JSON;
+
+- Validazione dei file JSON (input-output).
 
 
 **Esempio di utilizzo: JSON → CSV**
 ```python
-from src.converter_JSON import Converter_JSON
-from src.utils import Utils 
+from src.converter import Converter
 
-data = Utils().read_json(input_name)
-json_tables = Converter_JSON(output_folder)
-json_tables.processing(data, "root")
-print(f"[✓] Output salvato in: {output_folder}")
+input = os.path.join(os.path.dirname(__file__), "input.json")
+output = os.path.join(os.path.dirname(__file__), "output")
+conv = Converter()
+conv.processing_json(input, output)
 ```
 Nella cartella output_folder/ vengono salvati i .csv che rappresentano le tabelle generate dal JSON annidato.
-Nella cartella tests vengono proposti gli esempi: Test1, Test2 e Test3.
+Nella cartella tests vengono proposti gli esempi: Test1 e Test2.
 
 **Esempio di utilizzo: CSV → JSON**
 ```python
-from src.utils import Utils
-from src.converter_CSV import Converter_CSV
+from src.converter import Converter
 
-convert = Converter_CSV()
-result_json = convert.processing(input_folder)
-Utils().save_json(result_json, output)
-print(f"[✓] Output salvato in: {output}")
+input = os.path.join(os.path.dirname(__file__), "input")
+output = os.path.join(os.path.dirname(__file__), "output.json")
+conv = Converter()
+conv.processing_csv(output, input)
 ```
-Nella cartella tests vengono proposti gli esempi: Test4, Test5 e Test6.
+Nella cartella tests vengono proposti gli esempi: Test4 e Test5.

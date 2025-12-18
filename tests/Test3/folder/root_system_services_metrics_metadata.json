@@ -1,0 +1,14 @@
+{
+  "fields": {
+    "uptime_seconds": {
+      "type": "integer"
+    },
+    "requests": {
+      "type": "object",
+      "child_table": "root_system_services_metrics_requests"
+    }
+  },
+  "children": [
+    "root_system_services_metrics_requests"
+  ]
+}

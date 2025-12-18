@@ -1,0 +1,17 @@
+{
+  "fields": {
+    "threads": {
+      "type": "integer"
+    },
+    "batch_size": {
+      "type": "integer"
+    },
+    "retry_policy": {
+      "type": "object",
+      "child_table": "root_system_services_config_retry_policy"
+    }
+  },
+  "children": [
+    "root_system_services_config_retry_policy"
+  ]
+}
