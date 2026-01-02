@@ -1,6 +1,6 @@
 import os
 
-from src.converter import Converter
+from .converter import Converter
 
 
 if __name__ == "__main__":

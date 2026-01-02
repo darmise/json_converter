@@ -16,7 +16,7 @@ Tool Python per convertire JSON annidati in tabelle CSV “relazionali” e rico
 
 **Esempio di utilizzo: JSON → CSV**
 ```python
-from src.converter import Converter
+from .converter import Converter
 
 input = os.path.join(os.path.dirname(__file__), "input.json")
 output = os.path.join(os.path.dirname(__file__), "output")
@@ -28,7 +28,7 @@ Nella cartella tests vengono proposti gli esempi: Test1 e Test2.
 
 **Esempio di utilizzo: CSV → JSON**
 ```python
-from src.converter import Converter
+from .converter import Converter
 
 input = os.path.join(os.path.dirname(__file__), "input")
 output = os.path.join(os.path.dirname(__file__), "output.json")
