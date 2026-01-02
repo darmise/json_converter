@@ -12,7 +12,7 @@ description = "Strumento Python per convertire JSON annidati in tabelle CSV e vi
 readme = "README.md"
 readme-content-type = "text/markdown"
 authors = [
-  { name = "darmise", email = "" }
+  { name = "darmise", email = "example@example.com" }
 ]
 license = { text = "MIT" }
 keywords = [
@@ -32,7 +32,7 @@ requires-python = ">=3.7"
 # Le dipendenze minime per l'uso (da requirements.txt)
 dependencies = [
   "pandas",
-  "﻿jsonschema"
+  "jsonschema"
 ]
 
 [project.optional-dependencies]
