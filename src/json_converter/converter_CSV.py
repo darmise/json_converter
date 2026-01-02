@@ -215,19 +215,3 @@ class Converter_CSV:
                 self.attach_child_row(row_series, table_name, tables, metadata, pk_to_node)
 
         return result_list[0] if len(result_list) == 1 else result_list
-
-
-# MAIN
-# ============================================================
-if __name__ == "__main__":
-    # 1) Lettura JSON originale e generazione CSV + metadati
-    with open("input_4.json", "r", encoding="utf-8") as f:
-        data = json.load(f)
-    # start shredding root (data può essere dict con multiple chiavi)
-    shred_json(data, "root")
-
-    # 2) Ricostruzione JSON dai CSV e metadati
-    final_json = build_json_from_csv_with_metadata(OUTPUT_FOLDER)
-
-    save_json(final_json, os.path.join(OUTPUT_FOLDER, "reconstructed.json"))
-    print(f"[✓] JSON ricostruito salvato in {os.path.join(OUTPUT_FOLDER, 'reconstructed.json')}")
