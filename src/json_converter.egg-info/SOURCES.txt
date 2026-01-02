@@ -1,6 +1,0 @@
-README.md
-setup.py
-src/json_converter.egg-info/PKG-INFO
-src/json_converter.egg-info/SOURCES.txt
-src/json_converter.egg-info/dependency_links.txt
-src/json_converter.egg-info/top_level.txt
