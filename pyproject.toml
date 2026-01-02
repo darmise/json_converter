@@ -1,44 +1,16 @@
 [build-system]
-requires = [
-    "setuptools>=61.0",
-    "wheel"
-]
+requires = ["setuptools>=61"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "json-converter"
 version = "0.0.1"
-description = "Strumento Python per convertire JSON annidati in tabelle CSV e viceversa"
 readme = "README.md"
-readme-content-type = "text/markdown"
-authors = [
-  { name = "darmise", email = "example@example.com" }
-]
-license = { text = "MIT" }
-keywords = [
-  "json",
-  "converter",
-  "csv",
-  "data-normalization",
-  "json-csv"
-]
-classifiers = [
-  "Programming Language :: Python :: 3",
-  "License :: OSI Approved :: MIT License",
-  "Operating System :: OS Independent"
-]
 requires-python = ">=3.7"
 
-# Le dipendenze minime per l'uso (da requirements.txt)
 dependencies = [
-  "pandas",
-  "jsonschema"
-]
-
-[project.optional-dependencies]
-test = [
-  "pytest",
-  "pytest-cov"
+    "pandas",
+    "jsonschema"
 ]
 
 [tool.setuptools]
@@ -46,3 +18,4 @@ package-dir = {"" = "src"}
 
 [tool.setuptools.packages.find]
 where = ["src"]
+
