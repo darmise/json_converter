@@ -1,7 +1,7 @@
 import os
 import uuid
 import pandas as pd
-from src.utils import Utils
+from .utils import Utils
 
 
 class Converter_JSON:
