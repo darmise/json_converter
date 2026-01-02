@@ -1,7 +1,7 @@
-from src.json_converter.converter_JSON import Converter_JSON
-from src.json_converter.converter_CSV import Converter_CSV
-from src.json_converter.validator import Validator
-from src.json_converter.utils import Utils
+from .converter_JSON import Converter_JSON
+from .converter_CSV import Converter_CSV
+from .validator import Validator
+from .utils import Utils
 
 
 class Converter:
