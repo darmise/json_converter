@@ -3,8 +3,6 @@ import uuid
 import pandas as pd
 from .utils import Utils
 
-JSON_NULL = "__JSON_NULL__"
-
 
 class Converter_JSON:
     def __init__(self, out_folder):
@@ -13,21 +11,24 @@ class Converter_JSON:
 
     def get_new_id(self):
         return str(uuid.uuid4())
-
+    
     def infer_type(self, value):
-        if value is None:
-            return "null"
         if isinstance(value, dict):
             return "object"
-        if isinstance(value, list):
+
+        elif isinstance(value, list):
             return "array"
-        if isinstance(value, bool):
+
+        elif isinstance(value, bool):
             return "boolean"
-        if isinstance(value, int):
+
+        elif isinstance(value, int):
             return "integer"
-        if isinstance(value, float):
+        
+        elif isinstance(value, float):
             return "number"
-        if isinstance(value, str):
+
+        elif isinstance(value, str):
             s = value.strip().lower()
             if s in ("true", "false"):
                 return "boolean"
@@ -43,7 +44,7 @@ class Converter_JSON:
                 pass
             return "string"
         return "string"
-
+    
     def is_nested(self, value):
         return isinstance(value, (dict, list))
 
@@ -52,13 +53,13 @@ class Converter_JSON:
         children = []
 
         items = data if isinstance(data, list) else [data]
+        
         metadata = {"fields": {}, "children": []}
 
-        for item in items:
+        for item in items:  
             row = {}
             row_pk = self.get_new_id()
             row["pk_id"] = row_pk
-
             if parent_pk is not None:
                 row["id_fk"] = parent_pk
 
@@ -67,74 +68,47 @@ class Converter_JSON:
                 metadata["fields"]["value"] = {"type": self.infer_type(item)}
                 rows.append(row)
                 continue
-
             for key, value in item.items():
                 if self.is_nested(value):
                     child_table = f"{table_name}_{key}"
-
                     if isinstance(value, dict):
                         nested_items = [value]
                     else:
-                        nested_items = [
-                            v if isinstance(v, dict) else {key: v}
-                            for v in value
-                        ]
-
+                        nested_items = [v if isinstance(v, dict) else {key: v} for v in value]
                     children.append((child_table, nested_items, row_pk))
 
                     metadata["fields"][key] = {
-                        "type": self.infer_type(value),
-                        "child_table": child_table
+                    "type": self.infer_type(value),
+                    "child_table": child_table
                     }
                     metadata["children"].append(child_table)
                 else:
-                    if value is None:
-                        row[key] = JSON_NULL
-                    else:
-                        row[key] = value
-
+                    row[key] = value
                     metadata["fields"][key] = {
                         "type": self.infer_type(value)
                     }
-
+            
             rows.append(row)
-
+        
         table_csv = os.path.join(self.output_folder, f"{table_name}.csv")
-
-        df_new = pd.DataFrame(rows)
+        df_new = pd.DataFrame(rows).fillna('')
 
         if os.path.exists(table_csv):
-            existing_df = pd.read_csv(
-                table_csv,
-                keep_default_na=False
-            )
+            existing_df = pd.read_csv(table_csv, dtype=str).fillna('')
             df = pd.concat([existing_df, df_new], ignore_index=True)
         else:
             df = df_new
 
-        df.replace(JSON_NULL, pd.NA, inplace=True)
-
-        df.to_csv(
-            table_csv,
-            index=False,
-            na_rep="NaN"
-        )
-
+        df.to_csv(table_csv, index=False)
         print(f"[✓] CSV generato: {table_name}.csv")
 
-        metadata_file = os.path.join(
-            self.output_folder,
-            f"{table_name}_metadata.json"
-        )
+        metadata_file = os.path.join(self.output_folder, f"{table_name}_metadata.json")
         Utils().save_json(metadata, metadata_file)
         print(f"[✓] JSON metadati generato: {table_name}_metadata.json")
 
         for child_name, child_data, parent_pk_value in children:
-            self.processing(
-                child_data,
-                child_name,
-                table_name,
-                parent_pk_value
-            )
+            self.processing(child_data, child_name, table_name, parent_pk_value)
 
         return rows
+            
+  
