@@ -94,12 +94,7 @@ class Converter_JSON:
         df_new = pd.DataFrame(rows)
 
         if os.path.exists(table_csv):
-            existing_df = pd.read_csv(
-                table_csv,
-                dtype=str,
-                keep_default_na=False,
-                na_values=["NaN"]
-            )
+            existing_df = pd.read_csv(table_csv)
             df = pd.concat([existing_df, df_new], ignore_index=True)
         else:
             df = df_new
@@ -117,15 +112,9 @@ class Converter_JSON:
             f"{table_name}_metadata.json"
         )
         Utils().save_json(metadata, metadata_file)
-        print(f"[✓] JSON metadati generato: {table_name}_metadata.json")
 
         for child_name, child_data, parent_pk_value in children:
-            self.processing(
-                child_data,
-                child_name,
-                table_name,
-                parent_pk_value
-            )
+            self.processing(child_data, child_name, table_name, parent_pk_value)
 
         return rows
             
