@@ -91,24 +91,41 @@ class Converter_JSON:
             rows.append(row)
         
         table_csv = os.path.join(self.output_folder, f"{table_name}.csv")
-        df_new = pd.DataFrame(rows).fillna('')
+        df_new = pd.DataFrame(rows)
 
         if os.path.exists(table_csv):
-            existing_df = pd.read_csv(table_csv, dtype=str).fillna('')
+            existing_df = pd.read_csv(
+                table_csv,
+                dtype=str,
+                keep_default_na=False,
+                na_values=["NaN"]
+            )
             df = pd.concat([existing_df, df_new], ignore_index=True)
         else:
             df = df_new
 
-        df.to_csv(table_csv, index=False)
+        df.to_csv(
+            table_csv,
+            index=False,
+            na_rep="NaN"
+        )
+
         print(f"[✓] CSV generato: {table_name}.csv")
 
-        metadata_file = os.path.join(self.output_folder, f"{table_name}_metadata.json")
+        metadata_file = os.path.join(
+            self.output_folder,
+            f"{table_name}_metadata.json"
+        )
         Utils().save_json(metadata, metadata_file)
         print(f"[✓] JSON metadati generato: {table_name}_metadata.json")
 
         for child_name, child_data, parent_pk_value in children:
-            self.processing(child_data, child_name, table_name, parent_pk_value)
+            self.processing(
+                child_data,
+                child_name,
+                table_name,
+                parent_pk_value
+            )
 
         return rows
             
-  
