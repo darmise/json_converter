@@ -4,6 +4,7 @@ import pandas as pd
 
 
 class Converter_CSV:
+
     def __init__(self):
         pass
 
@@ -13,7 +14,7 @@ class Converter_CSV:
         tables = {}
         for f in csv_files:
             name = os.path.splitext(f)[0]
-            df = pd.read_csv(os.path.join(folder, f), dtype=str).fillna('')
+            df = pd.read_csv(os.path.join(folder, f), dtype=str).fillna('')  
             tables[name] = df
         return tables
     
@@ -36,9 +37,6 @@ class Converter_CSV:
         return record
     
     def convert_value(self, value, field_type):
-        if value is None or (isinstance(value, str) and value == ''):
-            return None
-
         if field_type == "boolean":
             if isinstance(value, str):
                 s = value.strip().lower()
@@ -69,7 +67,12 @@ class Converter_CSV:
                 return None
 
         if field_type == "string":
-            return str(value)
+            s = str(value)
+            if s == "NLL": # None
+                return None
+            if s == "":
+                return ""
+            return s
 
         if field_type in ("object", "array"):
             
@@ -116,6 +119,11 @@ class Converter_CSV:
         row_dict = row_series.to_dict()
         child_obj = self.clean_record(row_dict, types_map)
         
+        for field_name, field_info in meta_fields.items():
+            if field_info.get("optional") == "true":
+                if child_obj.get(field_name) == "":
+                    child_obj.pop(field_name, None)
+
         non_tech_fields = [fn for fn in meta_fields.keys() if fn not in ("pk_id", "id_fk")]
         if not child_meta.get("children") and len(non_tech_fields) == 1:
             only_field = non_tech_fields[0]
@@ -135,7 +143,7 @@ class Converter_CSV:
         d.clear()
         d.update(items)
 
-    def attach_child_row(self, row_series, table_name, tables, metadata, pk_to_node):    
+    def attach_child_row(self, row_series, table_name, metadata, pk_to_node):   
         parent_table, parent_field = self.find_parent_table_and_field(table_name, metadata)
         
         if parent_table is None:
@@ -212,6 +220,6 @@ class Converter_CSV:
             if df is None:
                 continue
             for _, row_series in df.iterrows():
-                self.attach_child_row(row_series, table_name, tables, metadata, pk_to_node)
+                self.attach_child_row(row_series, table_name, metadata, pk_to_node)
 
         return result_list[0] if len(result_list) == 1 else result_list

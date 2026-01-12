@@ -17,10 +17,6 @@
   },
   "children": [
     "root_address",
-    "root_orders",
-    "root_address",
-    "root_orders",
-    "root_address",
     "root_orders"
   ]
 }

@@ -1,0 +1,13 @@
+README.md
+pyproject.toml
+src/json_converter/__init__.py
+src/json_converter/converter.py
+src/json_converter/converter_CSV.py
+src/json_converter/converter_JSON.py
+src/json_converter/utils.py
+src/json_converter/validator.py
+src/json_converter.egg-info/PKG-INFO
+src/json_converter.egg-info/SOURCES.txt
+src/json_converter.egg-info/dependency_links.txt
+src/json_converter.egg-info/requires.txt
+src/json_converter.egg-info/top_level.txt

@@ -1,6 +1,6 @@
 import os
 
-from .converter import Converter
+from json_converter.converter import Converter
 
 
 if __name__ == "__main__":

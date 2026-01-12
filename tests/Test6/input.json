@@ -1,0 +1,52 @@
+{
+"caucus": null,
+    "congress_numbers": [
+      117,
+      118,
+      119
+    ],
+    "current": true,
+    "description": "Senior Senator for Maine",
+    "district": null,
+    "enddate": "2027-01-03",
+    "extra": {
+      "address": "413 Dirksen Senate Office Building Washington DC 20510",
+      "contact_form": "https://www.collins.senate.gov/contact",
+      "office": "413 Dirksen Senate Office Building",
+      "rss_url": "http://www.collins.senate.gov/public/?a=rss.feed"
+    },
+    "leadership_title": null,
+    "party": "Republican",
+    "person": {
+      "bioguideid": "C001035",
+      "birthday": "1952-12-07",
+      "cspanid": 45738,
+      "fediverse_webfinger": null,
+      "firstname": "Susan",
+      "gender": "female",
+      "gender_label": "Female",
+      "lastname": "Collins",
+      "link": "https://www.govtrack.us/congress/members/susan_collins/300025",
+      "middlename": "M.",
+      "name": "Sen. Susan Collins [R-ME]",
+      "namemod": "",
+      "nickname": "",
+      "osid": "N00000491",
+      "pvsid": null,
+      "sortname": "Collins, Susan (Sen.) [R-ME]",
+      "twitterid": "SenatorCollins",
+      "youtubeid": "SenatorSusanCollins"
+    },
+    "phone": "202-224-2523",
+    "role_type": "senator",
+    "role_type_label": "Senator",
+    "senator_class": "class2",
+    "senator_class_label": "Class 2",
+    "senator_rank": "senior",
+    "senator_rank_label": "Senior",
+    "startdate": "2021-01-03",
+    "state": "ME",
+    "title": "Sen.",
+    "title_long": "Senator",
+    "website": "https://www.collins.senate.gov"
+}

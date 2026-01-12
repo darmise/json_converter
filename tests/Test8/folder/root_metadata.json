@@ -1,0 +1,78 @@
+{
+  "fields": {
+    "caucus": {
+      "type": "string"
+    },
+    "congress_numbers": {
+      "type": "array",
+      "child_table": "root_congress_numbers"
+    },
+    "current": {
+      "type": "boolean"
+    },
+    "description": {
+      "type": "string"
+    },
+    "district": {
+      "type": "string"
+    },
+    "enddate": {
+      "type": "string"
+    },
+    "extra": {
+      "type": "object",
+      "child_table": "root_extra"
+    },
+    "leadership_title": {
+      "type": "string"
+    },
+    "party": {
+      "type": "string"
+    },
+    "person": {
+      "type": "object",
+      "child_table": "root_person"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "role_type": {
+      "type": "string"
+    },
+    "role_type_label": {
+      "type": "string"
+    },
+    "senator_class": {
+      "type": "string"
+    },
+    "senator_class_label": {
+      "type": "string"
+    },
+    "senator_rank": {
+      "type": "string"
+    },
+    "senator_rank_label": {
+      "type": "string"
+    },
+    "startdate": {
+      "type": "string"
+    },
+    "state": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "title_long": {
+      "type": "string"
+    },
+    "website": {
+      "type": "string"
+    }
+  },
+  "children": [
+    "root_congress_numbers",
+    "root_extra",
+    "root_person"
+  ]
+}

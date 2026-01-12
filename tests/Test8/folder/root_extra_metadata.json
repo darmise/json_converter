@@ -1,0 +1,22 @@
+{
+  "fields": {
+    "address": {
+      "type": "string"
+    },
+    "contact_form": {
+      "type": "string"
+    },
+    "office": {
+      "type": "string"
+    },
+    "rss_url": {
+      "type": "string",
+      "optional": "true"
+    },
+    "fax": {
+      "type": "string",
+      "optional": "true"
+    }
+  },
+  "children": []
+}

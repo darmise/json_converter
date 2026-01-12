@@ -1,0 +1,8 @@
+{
+  "fields": {
+    "congress_numbers": {
+      "type": "integer"
+    }
+  },
+  "children": []
+}

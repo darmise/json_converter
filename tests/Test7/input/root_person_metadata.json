@@ -1,0 +1,59 @@
+{
+  "fields": {
+    "bioguideid": {
+      "type": "string"
+    },
+    "birthday": {
+      "type": "string"
+    },
+    "cspanid": {
+      "type": "integer"
+    },
+    "fediverse_webfinger": {
+      "type": "string"
+    },
+    "firstname": {
+      "type": "string"
+    },
+    "gender": {
+      "type": "string"
+    },
+    "gender_label": {
+      "type": "string"
+    },
+    "lastname": {
+      "type": "string"
+    },
+    "link": {
+      "type": "string"
+    },
+    "middlename": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "namemod": {
+      "type": "string"
+    },
+    "nickname": {
+      "type": "string"
+    },
+    "osid": {
+      "type": "string"
+    },
+    "pvsid": {
+      "type": "string"
+    },
+    "sortname": {
+      "type": "string"
+    },
+    "twitterid": {
+      "type": "string"
+    },
+    "youtubeid": {
+      "type": "string"
+    }
+  },
+  "children": []
+}
