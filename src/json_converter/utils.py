@@ -13,7 +13,7 @@ class Utils:
         with open(output, "w", encoding="utf-8") as f:
             json.dump(json_data, f, indent=2, ensure_ascii=False)
 
-    def override_json(self, json_name, meta): #nuovo metodo
+    def override_json(self, json_name, meta): 
         saved_json = self.read_json(json_name) or {}
 
         saved_fields = saved_json.setdefault("fields", {})
