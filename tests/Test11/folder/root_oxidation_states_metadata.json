@@ -1,0 +1,8 @@
+{
+  "fields": {
+    "oxidation_states": {
+      "type": "string"
+    }
+  },
+  "children": []
+}

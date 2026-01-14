@@ -1,0 +1,12 @@
+{
+  "fields": {
+    "atomic_radius": {
+      "type": "object",
+      "child_table": "root_atomic_radius",
+      "optional": "true"
+    }
+  },
+  "children": [
+    "root_atomic_radius"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "fields": {
+    "calculated_pm": {
+      "type": "integer"
+    },
+    "covalent_pm": {
+      "type": "integer"
+    },
+    "van_der_waals_pm": {
+      "type": "integer"
+    }
+  },
+  "children": []
+}

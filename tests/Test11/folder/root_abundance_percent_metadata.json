@@ -1,0 +1,18 @@
+{
+  "fields": {
+    "universe": {
+      "type": "number"
+    },
+    "crust": {
+      "type": "number"
+    },
+    "ocean": {
+      "type": "number"
+    },
+    "human_body": {
+      "type": "number",
+      "optional": "true"
+    }
+  },
+  "children": []
+}

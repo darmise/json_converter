@@ -15,7 +15,6 @@
     }
   },
   "children": [
-    "root_system_services_nodes_queue",
     "root_system_services_nodes_queue"
   ]
 }

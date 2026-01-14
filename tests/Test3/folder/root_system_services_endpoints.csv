@@ -1,2 +1,2 @@
 pk_id,id_fk,login,refresh
-95b97def-1ab9-4c04-ac09-2870c677358a,00abf74a-6ba5-4e52-850b-99bdd8560359,/api/v1/auth/login,/api/v1/auth/refresh
+6a194f87-a714-4449-a207-3f188d9ea881,45dfb8f0-d97e-4dfe-b0bd-f043c18968a5,/api/v1/auth/login,/api/v1/auth/refresh

@@ -1,0 +1,11 @@
+pk_id,atomic_number,symbol,name,atomic_weight,electron_config,series,melting_point_K,boiling_point_K,electronegativity,valence,discovery_year,density_g_per_cm3,electron_affinity_kJ_per_mol,thermal_conductivity_W_per_mK,ionization_energy_kJ_per_mol,isotopes_count,oxidation_states
+ccbcfd21-f1e3-4fb4-b3e1-5a2dd5ff41c0,1,H,Hydrogen,1.008,1s1,Nonmetal,14.01,20.28,2.2,1,1766,0.0899,72.8,0.1805,1312.0,7,
+aef16074-226d-499c-ba63-12785ab7a4cd,2,He,Helium,4.002602,1s2,Noble,NLL,4.22,NLL,0,1895,0.1785,0.0,0.1513,2372.3,9,NLL
+44a714ef-cea5-47a3-bd63-d6878cd79317,3,Li,Lithium,6.94,[He] 2s1,Alkali,453.69,1615.0,0.98,1,1817,535.0,59.6,85.0,520.2,10,
+d1de4094-c39e-4a0f-9170-3a608b9cb68a,4,Be,Beryllium,9.0121831,[He] 2s2,Alkaline,1560.0,2743.0,1.57,2,1797,1848.0,0.0,190.0,899.5,12,
+69b3afea-f706-463e-aace-c13ce6a41bbe,5,B,Boron,10.81,[He] 2s2 2p1,Metalloid,2348.0,4273.0,2.04,3,1808,2460.0,26.7,27.0,800.6,14,
+85c05bee-43ca-4453-b926-04c93fb67eae,6,C,Carbon,12.011,[He] 2s2 2p2,Nonmetal,3915.0,3915.0,2.55,4,-3749,2260.0,153.9,140.0,1086.5,15,
+7246a9ed-6276-4419-855a-3249e0f03273,7,N,Nitrogen,14.007,[He] 2s2 2p3,Nonmetal,63.05,77.36,3.04,5,1772,1.251,7.0,0.02583,1402.3,16,
+1d528d3d-559b-4d0d-8ef5-d0fa597680d9,8,O,Oxygen,15.999,[He] 2s2 2p4,Nonmetal,54.8,90.2,3.44,2,1774,1.429,141.0,0.02658,1313.9,17,
+7048516d-e433-46b5-81a9-2e3765e649b8,9,F,Fluorine,18.998403162,[He] 2s2 2p5,Nonmetal,53.5,85.03,3.98,1,1886,1.696,328.0,0.0277,1681.0,18,
+afa7af92-15d4-4eac-adab-d9e8910d8c3d,10,Ne,Neon,20.1797,[He] 2s2 2p6,Noble,24.56,27.07,NLL,0,1898,0.9,0.0,0.0491,2080.7,19,NLL

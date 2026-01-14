@@ -85,10 +85,17 @@ class Converter_JSON:
                     if child_table not in metadata["children"]:
                         metadata["children"].append(child_table)
                 else:
-                    row[key] = "NLL" if value is None else value 
+                    row[key] = "NLL" if value is None else value
                     metadata["fields"][key] = {
                         "type": self.infer_type(value)
                     }
+                
+                metadata_file = os.path.join(self.output_folder, f"{table_name}_metadata.json")
+                if os.path.exists(metadata_file): 
+                    Utils().override_json(metadata_file, metadata)
+                else: 
+                    Utils().save_json(metadata, metadata_file)
+                print(f"[✓] JSON metadati generato: {table_name}_metadata.json")
             
             rows.append(row)
         
@@ -103,14 +110,6 @@ class Converter_JSON:
 
         df.to_csv(table_csv, index=False)
         print(f"[✓] CSV generato: {table_name}.csv")
-
-        metadata_file = os.path.join(self.output_folder, f"{table_name}_metadata.json")
-        
-        if os.path.exists(metadata_file): 
-            Utils().override_json(metadata_file, metadata)
-        else: 
-            Utils().save_json(metadata, metadata_file)
-        print(f"[✓] JSON metadati generato: {table_name}_metadata.json")
         
         for child_name, child_data, parent_pk_value in children:
             self.processing(child_data, child_name, table_name, parent_pk_value)

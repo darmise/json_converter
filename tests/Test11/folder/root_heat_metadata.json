@@ -1,0 +1,14 @@
+{
+  "fields": {
+    "specific_J_per_kgK": {
+      "type": "number"
+    },
+    "fusion_kJ_per_mol": {
+      "type": "number"
+    },
+    "vaporization_kJ_per_mol": {
+      "type": "number"
+    }
+  },
+  "children": []
+}

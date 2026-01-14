@@ -1,0 +1,76 @@
+{
+  "fields": {
+    "atomic_number": {
+      "type": "integer"
+    },
+    "symbol": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "atomic_weight": {
+      "type": "number"
+    },
+    "electron_config": {
+      "type": "string"
+    },
+    "series": {
+      "type": "string"
+    },
+    "melting_point_K": {
+      "type": "number"
+    },
+    "boiling_point_K": {
+      "type": "number"
+    },
+    "electronegativity": {
+      "type": "number",
+      "optional": "true"
+    },
+    "valence": {
+      "type": "integer"
+    },
+    "oxidation_states": {
+      "type": "array",
+      "optional": "true",
+      "child_table": "root_oxidation_states"
+    },
+    "atomic_radius": {
+      "type": "object",
+      "child_table": "root_atomic_radius"
+    },
+    "discovery_year": {
+      "type": "integer"
+    },
+    "density_g_per_cm3": {
+      "type": "number"
+    },
+    "electron_affinity_kJ_per_mol": {
+      "type": "number"
+    },
+    "thermal_conductivity_W_per_mK": {
+      "type": "number"
+    },
+    "abundance_percent": {
+      "type": "object",
+      "child_table": "root_abundance_percent"
+    },
+    "heat": {
+      "type": "object",
+      "child_table": "root_heat"
+    },
+    "ionization_energy_kJ_per_mol": {
+      "type": "number"
+    },
+    "isotopes_count": {
+      "type": "integer"
+    }
+  },
+  "children": [
+    "root_oxidation_states",
+    "root_atomic_radius",
+    "root_abundance_percent",
+    "root_heat"
+  ]
+}

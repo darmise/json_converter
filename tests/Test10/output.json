@@ -1,0 +1,12 @@
+[
+  {
+    "atomic_radius": null
+  },
+  {
+    "atomic_radius": {
+      "calculated_pm": 42,
+      "covalent_pm": 71,
+      "van_der_waals_pm": 147
+    }
+  }
+]

@@ -68,7 +68,7 @@ class Converter_CSV:
 
         if field_type == "string":
             s = str(value)
-            if s == "NLL": # None
+            if s == "NLL": 
                 return None
             if s == "":
                 return ""
@@ -79,6 +79,8 @@ class Converter_CSV:
             if isinstance(value, (dict, list)):
                 return value
             if isinstance(value, str):
+                if value == "NLL": 
+                    return None
                 try:
                     parsed = json.loads(value)
                     return parsed
@@ -192,6 +194,16 @@ class Converter_CSV:
         if child_pk:
             pk_to_node[child_pk] = child_obj
 
+    def align_root_json_with_metadata(self, root_node, root_meta):
+        if not isinstance(root_node, dict):
+            return
+
+        meta_fields = root_meta.get("fields", {})
+
+        for idx, field in enumerate(meta_fields.keys()):
+            if field in root_node:
+                self.move_key_to_index_inplace(root_node, field, idx)
+
     def processing(self, folder):
         tables = self.load_csv_files(folder)
         metadata = self.load_metadata(folder)
@@ -207,13 +219,15 @@ class Converter_CSV:
 
         for _, root_row in root_df.iterrows():
             root_node = self.clean_record(
-                root_row, {k: v.get("type", "string") for k, v in root_meta_fields.items()}
+                root_row,
+                {k: v.get("type", "string") for k, v in root_meta_fields.items()}
             )
             pk_to_node[root_row["pk_id"]] = root_node
             result_list.append(root_node)
 
         other_tables_sorted = self.get_hierarchy_list(metadata)
-        other_tables_sorted.remove("root")
+        if "root" in other_tables_sorted:
+            other_tables_sorted.remove("root")
 
         for table_name in other_tables_sorted:
             df = tables.get(table_name)
@@ -222,4 +236,9 @@ class Converter_CSV:
             for _, row_series in df.iterrows():
                 self.attach_child_row(row_series, table_name, metadata, pk_to_node)
 
+        root_meta_full = metadata.get("root", {})
+        for node in result_list:
+            self.align_root_json_with_metadata(node, root_meta_full)
+
         return result_list[0] if len(result_list) == 1 else result_list
+
