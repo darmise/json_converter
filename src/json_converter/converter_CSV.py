@@ -81,6 +81,8 @@ class Converter_CSV:
             if isinstance(value, str):
                 if value == "NLL": 
                     return None
+                if value == "":
+                    return None
                 try:
                     parsed = json.loads(value)
                     return parsed
