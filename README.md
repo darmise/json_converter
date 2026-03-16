@@ -23,7 +23,7 @@ output = os.path.join(os.path.dirname(__file__), "output")    #foldername output
 conv = Converter()
 conv.processing_json(input, output)
 ```
-Nella cartella output/ vengono salvati i .CSV (tabelle) generate a partire dal JSON annidato.
+Nella cartella output/ vengono salvati i .CSV (tabelle) generati a partire dal JSON annidato.
 
 **Esempio di utilizzo: CSV → JSON**
 ```python
