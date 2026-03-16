@@ -6,11 +6,11 @@ Tool Python che consente la conversione bidirezionale di file JSON annidati in t
 
 - Conversione JSON → tabelle CSV; 
 
-- Conversione CSV → JSON, con ricostruzione della struttura originaria (basata sulle relazioni padre-figlo);
+- Conversione CSV → JSON, con ricostruzione della struttura originaria (basata sulle relazioni padre-figlio);
 
 - Supporto a JSON singolo o lista di oggetti JSON;
 
-- Validazione dei file JSON (input-output) passando in input lo schema JSON corrispondente.
+- Validazione dei file JSON (input-output), passando in input il JSON_schema corrispondente.
 
 
 **Esempio di utilizzo: JSON → CSV**
@@ -23,7 +23,7 @@ output = os.path.join(os.path.dirname(__file__), "output")    #foldername output
 conv = Converter()
 conv.processing_json(input, output)
 ```
-Nella cartella output/ vengono salvati i .csv che rappresentano le tabelle generate dal JSON annidato.
+Nella cartella output/ vengono salvati i .CSV (tabelle) generate a partire dal JSON annidato.
 
 **Esempio di utilizzo: CSV → JSON**
 ```python
